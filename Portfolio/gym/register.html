@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </link>
+</head>
+
+<body>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+.container{
+    width: 100%;
+    height:100vh;
+    background-color: hsl(180, 12%, 8%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 4vw;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+form h3{
+    color: hsl(79, 72%, 55%);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+form input,form textarea{
+    border: 0;
+    margin: 10px 0;
+    padding: 20px;
+    outline: none;
+    background: #f5f5f5;
+    font-size: 16px;
+}
+form button{
+    padding: 15px;
+    background: hsl(79, 72%, 55%);
+    color: #000;
+    font-size: 18px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    width: 150px;
+    margin: 20px auto 0;
+    border-radius: 30px;
+}
+    </style>
+    <div class="container">
+        <form action="https://formsubmit.co/ns9829980@gmail.com" method="POST"">
+            <h3>GET IN TOUCH</h3>
+
+            <input type="text" id="name" name="Name" placeholder="Enter your name" required>
+            <input type="text" id="email" name="Email" placeholder="Enter your e-mail" required>
+            <input type="number" id="phone" name="Number" placeholder="phone number" required>
+            <textarea id="message" name="Address" rows="4" placeholder="Your Address"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</body>
+
+</html>

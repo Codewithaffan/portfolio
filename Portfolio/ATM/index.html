@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini ATM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/img/1658083887039.jpeg" type="image/x-icon">
+</head>
+<style>
+    h2 {
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, 'Arial Narrow', Arial, sans-serif, Courier, monospace;
+        ;
+    }
+</style>
+
+<body>
+    <div class="gen-container">
+        <h2 align="center">Student Association Bank</h2>
+        <div class="head">
+            <h4 class="h-1">ATM</h4>
+            <h4 class="h-2">Card Return 🏧</h4>
+        </div>
+        <div class="mid-container">
+            <div class="about-container">
+                <p class="aa">Welcome</p>
+                <h2 class="bb1">Affan Momin</h2>
+                <p class="aa">Account Number</p>
+                <h2 class="bb">001234987</h2>
+            </div>
+            <div class="button-container">
+                <button onclick="withdraw()">Withdraw</button>
+                <button onclick="deposit()">Deposit</button>
+                <button onclick="balanced()">Balance</button>
+                <button onclick="persnal()">Details</button>
+                <button onclick="settings()">Change Password</button>
+                <button onclick="others()">Other</button>
+            </div>
+        </div>
+        <center class="input-container">
+            <h3 id="disp" class="dispp"></h3>
+            <input type="text" placeholder="₹" id="customerInput">
+        </center>
+    </div>
+    <script>
+        var balance = 1000
+        function withdraw() {
+            var amountEntered = Number(customerInput.value);
+            if (amountEntered > balance) {
+                disp.innerHTML = "Insufficient Fund";
+            } else if (amountEntered < 0) {
+                disp.innerHTML = "Out of Bounds";
+            } else if (amountEntered === "") {
+                disp.innerHTML = "Kindly enter an amount";
+            } else {
+                balance = balance - amountEntered;
+                bba.innerHTML = "<h4>₹" + balance + "</h3>";
+            }
+            customerInput.value =null; // Clear the input field
+        }
+
+        function deposit() {
+            var amountEntered = Number(customerInput.value);
+            if (amountEntered < 0) {
+                disp.innerHTML = "Enter Valid Digit";
+            } else if (amountEntered === "") {
+                disp.innerHTML = "Kindly enter an amount";
+            } else {
+                balance = balance + amountEntered;
+                bba.innerHTML = "<h4>₹" + balance + "</h3>";
+            }
+            customerInput.value = null; // Clear the input field
+        }
+
+        function persnal() {
+            alert("Name: Affan Momin\n Age: 20\n Gender: Male")
+        }
+
+        function balanced() {
+            alert("Account Balance is: ₹" + balance);
+
+        }
+        function settings() {
+            var oldPin = prompt("Enter Old Pin:");
+            if (oldPin === "1234") {
+                var newPin = prompt("Enter new Pin:");
+                if (newPin !== null && newPin !== "") {
+                    // Update the PIN with the new PIN
+                    alert("PIN Successfully changed");
+                } else {
+                    alert("New PIN cannot be empty");
+                }
+            } else {
+                alert("Incorrect Old PIN");
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
